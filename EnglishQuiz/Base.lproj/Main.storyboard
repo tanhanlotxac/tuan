@@ -1,25 +1,321 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8118" systemVersion="15A172" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8098"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="EnglishQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="English Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvy-9A-8Ry">
+                                <rect key="frame" x="107" y="140" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52L-zi-fCL">
+                                <rect key="frame" x="137" y="297" width="46" height="62"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="PLAY"/>
+                                <connections>
+                                    <segue destination="9z5-ZV-AKT" kind="modal" id="76a-8E-eJR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79134104829999996" green="0.99729369759999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-47" y="354"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WSB-Nz-iEN">
+            <objects>
+                <viewController id="9z5-ZV-AKT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AHC-zE-gOm"/>
+                        <viewControllerLayoutGuide type="bottom" id="kmi-b7-5AI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U99-RG-VwX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="840-FH-Uqu">
+                                <rect key="frame" x="85" y="109" width="150" height="30"/>
+                                <state key="normal" title="Guess From Pictures"/>
+                                <connections>
+                                    <segue destination="IY3-78-UUd" kind="modal" id="X3u-I5-1N8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQ9-1E-cE3">
+                                <rect key="frame" x="111" y="220" width="98" height="30"/>
+                                <state key="normal" title="Guess Word"/>
+                                <connections>
+                                    <segue destination="b29-3b-AUu" kind="modal" id="EhD-i4-6kg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVG-we-rpn">
+                                <rect key="frame" x="124" y="317" width="72" height="30"/>
+                                <state key="normal" title="Text Quiz"/>
+                                <connections>
+                                    <segue destination="yLc-rU-J7j" kind="modal" id="dnp-V2-vVM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79134104829999996" green="0.99729369759999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZQ-MU-xJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="347" y="364"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kbd-Xj-ahL">
+            <objects>
+                <viewController id="IY3-78-UUd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FTi-1d-nOw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Je8-Lp-zst"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="frF-0e-54Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEh-nd-B26">
+                                <rect key="frame" x="163" y="67" width="147" height="115"/>
+                                <state key="normal" title="Button" image="chair"/>
+                                <connections>
+                                    <segue destination="wFI-VS-CKZ" kind="modal" id="6MB-OV-bYX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vk2-Nl-bBF">
+                                <rect key="frame" x="8" y="198" width="137" height="120"/>
+                                <state key="normal" title="Button" image="computer"/>
+                                <connections>
+                                    <segue destination="LMi-St-psV" kind="modal" id="CYj-aO-WEx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te9-ob-Zsh">
+                                <rect key="frame" x="163" y="201" width="137" height="114"/>
+                                <state key="normal" title="Button" image="eraser"/>
+                                <connections>
+                                    <segue destination="LMi-St-psV" kind="modal" id="XML-ot-zVi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chair" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goo-uu-A6l">
+                                <rect key="frame" x="129" y="344" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhu-hR-SSJ">
+                                <rect key="frame" x="20" y="39" width="125" height="143"/>
+                                <state key="normal" title="Button" image="box"/>
+                                <connections>
+                                    <segue destination="LMi-St-psV" kind="modal" id="23g-YJ-OTP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79134104829999996" green="0.99729369759999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghS-nk-VvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="-102"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="W6O-Dw-9MH">
+            <objects>
+                <viewController id="b29-3b-AUu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EOf-La-RG3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cd0-rp-SWW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I2X-nG-OtO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pencil" translatesAutoresizingMaskIntoConstraints="NO" id="hbT-Ya-hEL">
+                                <rect key="frame" x="40" y="68" width="240" height="179"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9m-lV-IHN">
+                                <rect key="frame" x="132" y="288" width="46" height="30"/>
+                                <state key="normal" title="Pencil"/>
+                                <connections>
+                                    <segue destination="wFI-VS-CKZ" kind="modal" id="0ez-Ax-P5y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoK-iH-6lx">
+                                <rect key="frame" x="132" y="336" width="46" height="30"/>
+                                <state key="normal" title="Tree"/>
+                                <connections>
+                                    <segue destination="LMi-St-psV" kind="modal" id="oud-M5-fnA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is this?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htT-5m-vYs">
+                                <rect key="frame" x="111" y="28" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqL-G6-wyO">
+                                <rect key="frame" x="132" y="391" width="46" height="30"/>
+                                <state key="normal" title="Candy"/>
+                                <connections>
+                                    <segue destination="LMi-St-psV" kind="modal" id="48b-kC-6KI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79134104829999996" green="0.99729369759999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aIu-bw-UQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="531"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jhZ-hu-WSA">
+            <objects>
+                <viewController id="yLc-rU-J7j" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s47-Hk-SGB"/>
+                        <viewControllerLayoutGuide type="bottom" id="x8m-O7-IRq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="brf-fe-rmB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="That ... is running around the house." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpq-Pu-6tD">
+                                <rect key="frame" x="20" y="127" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORh-ip-GSZ">
+                                <rect key="frame" x="137" y="189" width="46" height="30"/>
+                                <state key="normal" title="Dog"/>
+                                <connections>
+                                    <segue destination="wFI-VS-CKZ" kind="modal" id="is1-Us-ZaF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLF-5g-kSn">
+                                <rect key="frame" x="137" y="248" width="46" height="30"/>
+                                <state key="normal" title="Chair"/>
+                                <connections>
+                                    <segue destination="LMi-St-psV" kind="modal" id="ydE-5I-zJV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9R-fr-n6v">
+                                <rect key="frame" x="137" y="316" width="46" height="30"/>
+                                <state key="normal" title="Bed"/>
+                                <connections>
+                                    <segue destination="LMi-St-psV" kind="modal" id="9CS-9w-gcN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79134104829999996" green="0.99729369759999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cE3-jI-rmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34" y="-472"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Gjm-O8-7QQ">
+            <objects>
+                <viewController id="LMi-St-psV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cul-OJ-gjh"/>
+                        <viewControllerLayoutGuide type="bottom" id="8GR-nb-xeP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Xn-JK-XF8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wrong" translatesAutoresizingMaskIntoConstraints="NO" id="ttG-XM-fzV">
+                                <rect key="frame" x="40" y="81" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You're wrong!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrQ-rC-92y">
+                                <rect key="frame" x="103" y="253" width="114" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.01026766514" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoW-F0-shl">
+                                <rect key="frame" x="112" y="305" width="96" height="30"/>
+                                <state key="normal" title="Back to menu"/>
+                                <connections>
+                                    <segue destination="9z5-ZV-AKT" kind="modal" id="HMT-wa-48O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79134104829999996" green="0.99729369759999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewR-Mx-fXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128" y="537"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="btb-YY-NJk">
+            <objects>
+                <viewController id="wFI-VS-CKZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aDz-qB-lFZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="EcV-3z-2oO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6SP-WF-rfy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="pdS-fR-Ckv">
+                                <rect key="frame" x="47" y="70" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You're right!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7G-dH-TgG">
+                                <rect key="frame" x="106" y="253" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.01026766514" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTN-hg-zBc">
+                                <rect key="frame" x="113" y="322" width="95" height="30"/>
+                                <state key="normal" title="Back to menu"/>
+                                <connections>
+                                    <segue destination="9z5-ZV-AKT" kind="modal" id="CFq-gM-GI9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79134104829999996" green="0.99729369759999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DS5-74-Kpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128" y="-83"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="box" width="400" height="400"/>
+        <image name="chair" width="500" height="500"/>
+        <image name="computer" width="450" height="371"/>
+        <image name="eraser" width="400" height="300"/>
+        <image name="pencil" width="626" height="626"/>
+        <image name="right" width="298" height="279"/>
+        <image name="wrong" width="298" height="294"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="HMT-wa-48O"/>
+        <segue reference="XML-ot-zVi"/>
+        <segue reference="6MB-OV-bYX"/>
+    </inferredMetricsTieBreakers>
 </document>
